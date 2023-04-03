@@ -1,0 +1,167 @@
+materials:
+  portal_gun_white:
+    gDPSetPrimColor:
+      r: 255
+      g: 255
+      b: 255
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+    gDPSetRenderMode: G_RM_OPA_SURF
+
+  portal_gun_metal:
+    gDPSetPrimColor:
+      r: 32
+      g: 32
+      b: 32
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+    gDPSetRenderMode: G_RM_OPA_SURF
+
+  button_base:
+    gDPSetTile:
+      - null
+      - filename: ../../portal_pak_modified/materials/models/props/button_base.png
+        fmt: G_IM_FMT_RGBA
+        siz: G_IM_SIZ_16b
+        tmem: 256
+        s:
+          wrap: true
+        t:
+          wrap: false
+    gSPTexture:
+      tile: 1
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["SHADE", "0", "TEXEL0", "0"]
+
+  button_base_black:
+    gDPSetPrimColor:
+      r: 32
+      g: 32
+      b: 32
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+  
+  button_top:
+    gDPSetTile:
+      filename: ../../portal_pak_modified/materials/models/props/button.png
+      fmt: G_IM_FMT_RGBA
+      siz: G_IM_SIZ_16b
+      s:
+        wrap: false
+      t:
+        wrap: false
+    gSPTexture:
+      tile: 0
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["SHADE", "0", "TEXEL0", "0"]
+    
+  door_frame_01:
+    gDPSetPrimColor:
+      r: 32
+      g: 32
+      b: 32
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["SHADE", "0", "PRIMITIVE", "0"]
+
+  radio_face:
+    gDPSetTile:
+      filename: ../../portal_pak_modified/materials/models/props/radio.png
+      fmt: G_IM_FMT_RGBA
+      siz: G_IM_SIZ_16b
+        
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["SHADE", "0", "TEXEL0", "0"]
+
+  radio_black:
+    gDPSetPrimColor:
+      r: 32
+      g: 32
+      b: 32
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["SHADE", "0", "PRIMITIVE", "0"]
+
+  radio_white:
+    gDPSetPrimColor:
+      r: 240
+      g: 240
+      b: 240
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["SHADE", "0", "PRIMITIVE", "0"]
+
+  solid_white:
+    gDPSetPrimColor:
+      r: 255
+      g: 255
+      b: 255
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+
+  solid_black:
+    gDPSetPrimColor:
+      r: 32
+      g: 32
+      b: 32
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+
+  blue_glow:
+    gDPSetPrimColor:
+      r: 89
+      g: 197
+      b: 240
+    gDPSetCombineMode: 
+      color: ["0", "0", "0", "PRIMITIVE"]
+
+  solid_white_two_sided:
+    gDPSetPrimColor:
+      r: 255
+      g: 255
+      b: 255
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+      clear: [G_CULL_BACK]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+
+  solid_black_two_sided:
+    gDPSetPrimColor:
+      r: 32
+      g: 32
+      b: 32
+    gSPGeometryMode:
+      set: [G_LIGHTING, G_SHADE]
+      clear: [G_CULL_BACK]
+    gDPSetCombineMode: 
+      color: ["PRIMITIVE", "0", "SHADE", "0"]
+
+  blue_glow_two_sided:
+    gDPSetPrimColor:
+      r: 89
+      g: 197
+      b: 240
+    gSPGeometryMode:
+      clear: [G_CULL_BACK]
+    gDPSetCombineMode: 
+      color: ["0", "0", "0", "PRIMITIVE"]
