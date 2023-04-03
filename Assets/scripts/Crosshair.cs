@@ -18,9 +18,9 @@ public class Crosshair : MonoBehaviour
     {
         var portals = portalPair.Portals;
 
-        inPortalImg.color = portals[0].PortalColour;
-        outPortalImg.color = portals[1].PortalColour;
-
+      //  inPortalImg.color = portals[0].PortalColour;
+      //  outPortalImg.color = portals[1].PortalColour;
+       
         inPortalImg.gameObject.SetActive(false);
         outPortalImg.gameObject.SetActive(false);
     }
@@ -29,11 +29,15 @@ public class Crosshair : MonoBehaviour
     {
         if(portalID == 0)
         {
+           
             inPortalImg.gameObject.SetActive(isPlaced);
+           
         }
         else
         {
+           
             outPortalImg.gameObject.SetActive(isPlaced);
+           
         }
     }
 }
