@@ -6,9 +6,8 @@ using UnityEngine;
 public class Portalgun : MonoBehaviour
 {
     [SerializeField] private float _fireRate = 25f;
-    [SerializeField] private float _Range = 200f;
-    [SerializeField] private GameObject _Blue_portal;
-    [SerializeField] private GameObject _Orange_portal;
+    [SerializeField] private float _Range = 250f;
+   
     [SerializeField] private AudioClip _shotSFX;
     [SerializeField] private AudioSource _shotSoundSource;
     [SerializeField] private Camera _cam;
@@ -33,32 +32,18 @@ public class Portalgun : MonoBehaviour
         {
             _nextFire1 = Time.time + 1f / _fireRate;
             _shotSoundSource.PlayOneShot(_shotSFX);
-           // Shoot();
-            FirePortal(0, portalgun.transform.position, portalgun.transform.forward, 250.0f);
+          
+            FirePortal(0, portalgun.transform.position, portalgun.transform.forward, _Range);
         }
-        else if (Input.GetButtonDown("XRI_Right_GripButton") && Time.time > _nextFire2)
+        else if (Input.GetButtonDown("XRI_Right_PrimaryButton") && Time.time > _nextFire2)
         {
             _nextFire2 = Time.time + 1f / _fireRate;
             _shotSoundSource.PlayOneShot(_shotSFX);
-          //  Shoot();
-            FirePortal(1, portalgun.transform.position, portalgun.transform.forward, 250.0f);
+          
+            FirePortal(1, portalgun.transform.position, portalgun.transform.forward, _Range);
         }
 
     }
-    void Shoot()
-    {
-       
-        RaycastHit hit;
-        if (Physics.Raycast(portalgun.transform.position, portalgun.transform.forward, out hit, _Range))
-        {
-            if (hit.rigidbody != null)
-            {
-                var portal = Instantiate(_Blue_portal, hit.point, Quaternion.LookRotation(hit.normal), hit.collider.gameObject.transform);
-
-            }
-        }
-    }
-    
 
     private void FirePortal(int portalID, Vector3 pos, Vector3 dir, float distance)
     {
@@ -118,6 +103,7 @@ public class Portalgun : MonoBehaviour
             bool wasPlaced = portals.Portals[portalID].PlacePortal(hit.collider, hit.point, portalRotation);
             if (wasPlaced)
             {
+                Debug.Log("Placed");
                 crosshair.SetPortalPlaced(portalID, true);
             }
         }

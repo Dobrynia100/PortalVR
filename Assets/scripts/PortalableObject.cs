@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
-//[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
 public class PortalableObject : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class PortalableObject : MonoBehaviour
     private Portal inPortal;
     private Portal outPortal;
 
-   // private new Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     protected new Collider collider;
 
     private static readonly Quaternion halfTurn = Quaternion.Euler(0.0f, 180.0f, 0.0f);
@@ -31,7 +31,7 @@ public class PortalableObject : MonoBehaviour
         meshRenderer.materials = GetComponent<MeshRenderer>().materials;
         cloneObject.transform.localScale = transform.localScale;
 
-       // rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
     }
 
@@ -104,7 +104,7 @@ public class PortalableObject : MonoBehaviour
         // Update velocity of rigidbody.
         Vector3 relativeVel = inTransform.InverseTransformDirection(GetComponent<Rigidbody>().velocity);
         relativeVel = halfTurn * relativeVel;
-       // rigidbody.velocity = outTransform.TransformDirection(relativeVel);
+        rigidbody.velocity = outTransform.TransformDirection(relativeVel);
 
         // Swap portal references.
         var tmp = inPortal;
