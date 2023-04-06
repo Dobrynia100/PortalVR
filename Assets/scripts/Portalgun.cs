@@ -8,7 +8,10 @@ public class Portalgun : MonoBehaviour
     [SerializeField] private float _fireRate = 25f;
     [SerializeField] private float _Range = 250f;
    
-    [SerializeField] private AudioClip _shotSFX;
+    [SerializeField] private AudioClip blueP;
+    [SerializeField] private AudioClip OrangeP;
+    [SerializeField] private AudioClip Grabbing;
+    [SerializeField] private AudioClip InvalidSurface;
     [SerializeField] private AudioSource _shotSoundSource;
     [SerializeField] private Camera _cam;
     [SerializeField] private Portalgun portalgun;
@@ -31,16 +34,20 @@ public class Portalgun : MonoBehaviour
         if (Input.GetButtonDown("XRI_Right_TriggerButton") && Time.time > _nextFire1)
         {
             _nextFire1 = Time.time + 1f / _fireRate;
-            _shotSoundSource.PlayOneShot(_shotSFX);
+           
           
             FirePortal(0, portalgun.transform.position, portalgun.transform.forward, _Range);
         }
         else if (Input.GetButtonDown("XRI_Right_PrimaryButton") && Time.time > _nextFire2)
         {
             _nextFire2 = Time.time + 1f / _fireRate;
-            _shotSoundSource.PlayOneShot(_shotSFX);
+            
           
             FirePortal(1, portalgun.transform.position, portalgun.transform.forward, _Range);
+        }
+        if (Input.GetButtonDown("XRI_Right_GrabButton"))
+        {
+            _shotSoundSource.PlayOneShot(Grabbing);
         }
 
     }
@@ -104,7 +111,17 @@ public class Portalgun : MonoBehaviour
             if (wasPlaced)
             {
                 Debug.Log("Placed");
+                if (portalID == 0)
+                {
+                    _shotSoundSource.PlayOneShot(blueP);
+                }
+                else if (portalID == 1) { _shotSoundSource.PlayOneShot(OrangeP); }
                 crosshair.SetPortalPlaced(portalID, true);
+               
+            }
+            else
+            {
+                _shotSoundSource.PlayOneShot(InvalidSurface);
             }
         }
     }
