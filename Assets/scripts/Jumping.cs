@@ -16,7 +16,7 @@ public class Jumping : MonoBehaviour
     private Rigidbody rb;
     
 
-  //  private bool IsGrounded => Physics.Raycast(new Vector2(transform.position.x, transform.position.y + 2.2f), Vector3.down, 2.0f);
+ 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,6 +44,7 @@ public class Jumping : MonoBehaviour
             float moveInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         }
+
     }
 
     private void Jump()

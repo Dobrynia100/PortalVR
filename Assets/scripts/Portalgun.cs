@@ -45,25 +45,27 @@ public class Portalgun : MonoBehaviour
           
             FirePortal(1, portalgun.transform.position, portalgun.transform.forward, _Range);
         }
-        if (Input.GetButtonDown("XRI_Right_GrabButton"))
-        {
-            _shotSoundSource.PlayOneShot(Grabbing);
+        if (Input.GetButtonDown("XRI_Right_GripButton"))
+        {           
+               // _shotSoundSource.PlayOneShot(Grabbing);
+            
         }
-
+        
+       
     }
 
     private void FirePortal(int portalID, Vector3 pos, Vector3 dir, float distance)
     {
         RaycastHit hit;
         Physics.Raycast(pos, dir, out hit, distance, layerMask);
-        Debug.Log("0");
+       // Debug.Log("0");
         if (hit.collider != null)
         {
             Debug.Log(hit.collider.tag);
             // If we shoot a portal, recursively fire through the portal.
             if (hit.collider.tag == "Portal")
             {
-                Debug.Log("тэг портал");
+              
                 var inPortal = hit.collider.GetComponent<Portal>();
 
                 if(inPortal == null)

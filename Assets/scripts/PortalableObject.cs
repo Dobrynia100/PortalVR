@@ -18,10 +18,11 @@ public class PortalableObject : MonoBehaviour
     private new Rigidbody rigidbody;
     protected new Collider collider;
 
-    private static readonly Quaternion halfTurn = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-
+    private static readonly Quaternion halfTurn = Quaternion.Euler(0.01f, 180.0f, 0.01f);
+   
     protected virtual void Awake()
     {
+        
         cloneObject = new GameObject();
         cloneObject.SetActive(false);
         var meshFilter = cloneObject.AddComponent<MeshFilter>();
@@ -33,6 +34,7 @@ public class PortalableObject : MonoBehaviour
 
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
+        Debug.Log("Создан клон");
     }
 
     private void LateUpdate()
@@ -56,6 +58,7 @@ public class PortalableObject : MonoBehaviour
             Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
             relativeRot = halfTurn * relativeRot;
             cloneObject.transform.rotation = outTransform.rotation * relativeRot;
+            Debug.Log("перемещение клона?");
         }
         else
         {
@@ -71,7 +74,7 @@ public class PortalableObject : MonoBehaviour
         Physics.IgnoreCollision(collider, wallCollider);
 
         cloneObject.SetActive(false);
-
+        Debug.Log("В портале");
         ++inPortalCount;
     }
 
@@ -97,10 +100,48 @@ public class PortalableObject : MonoBehaviour
         transform.position = outTransform.TransformPoint(relativePos);
 
         // Update rotation of object.
-        Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
-        relativeRot = halfTurn * relativeRot;
-        transform.rotation = outTransform.rotation * relativeRot;
+       
+            
 
+        if (collider.tag.Equals("Player"))
+        {
+            Debug.Log("тэг игрока");
+            
+            Debug.Log(inTransform.rotation.y);
+            Debug.Log(inTransform.rotation.z);
+            Debug.Log(outTransform.rotation.y);
+            Debug.Log(outTransform.rotation.z);
+            if (inTransform.rotation.y <=-0.5f ||  inTransform.rotation.z<=-0.5f) //|| outTransform.rotation.z <= -0.5f  || outTransform.rotation.y <= -0.5f)
+            {
+                Debug.Log("!!!!!!!!!!!верх-низ,вращение!!!!!!!!!");
+               transform.rotation = outTransform.rotation;
+                transform.rotation = Quaternion.Euler(0.01f, 180.0f, 0.01f);
+            }
+            else
+            {
+                Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
+                
+                Debug.Log(relativeRot.y);
+                Debug.Log(relativeRot.z);
+                relativeRot = halfTurn * relativeRot;
+                // Camera.main.transform.rotation.Set(0.0f, transform.rotation.y + 1.0f, transform.rotation.z, transform.rotation.w);
+                // transform.rotation.Set(0.0f, transform.rotation.y + 1.0f, transform.rotation.z, transform.rotation.w);
+                
+                Debug.Log(relativeRot.y);
+                Debug.Log(outTransform.rotation.y);
+                Debug.Log(relativeRot.z);
+                Debug.Log(outTransform.rotation.z);
+                transform.rotation = outTransform.rotation * relativeRot;      
+                Debug.Log(transform.rotation.y);              
+                Debug.Log(transform.rotation.z);
+            }
+            
+        }
+        else {
+            Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
+            relativeRot = halfTurn * relativeRot;
+            transform.rotation = outTransform.rotation * relativeRot;//сделать только с одной осью,или как то оставлять ротацию определенных
+        }
         // Update velocity of rigidbody.
         Vector3 relativeVel = inTransform.InverseTransformDirection(GetComponent<Rigidbody>().velocity);
         relativeVel = halfTurn * relativeVel;
@@ -110,5 +151,6 @@ public class PortalableObject : MonoBehaviour
         var tmp = inPortal;
         inPortal = outPortal;
         outPortal = tmp;
+        Debug.Log("Переместился?");
     }
 }

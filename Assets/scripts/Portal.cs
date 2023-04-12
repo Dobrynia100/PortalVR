@@ -48,9 +48,11 @@ public class Portal : MonoBehaviour
         for (int i = 0; i < portalObjects.Count; ++i)
         {
             Vector3 objPos = transform.InverseTransformPoint(portalObjects[i].transform.position);
-
-            if (objPos.z > 0.0f)
+           // Debug.Log(objPos.z);
+            if (objPos.z > 0.0f)//по модулю? вывести значения
             {
+                Debug.Log("перемещение?");
+                Debug.Log(objPos.z);
                 portalObjects[i].Warp();
             }
         }
@@ -58,10 +60,12 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("коллайдер попал в портал");
         var obj = other.GetComponent<PortalableObject>();
         if (obj != null)
         {
             portalObjects.Add(obj);
+            Debug.Log("Обнаружен в списке");
             obj.SetIsInPortal(this, OtherPortal, wallCollider);
         }
     }
@@ -105,16 +109,17 @@ public class Portal : MonoBehaviour
     // Ensure the portal cannot extend past the edge of a surface.
     private void FixOverhangs()
     {
+        float x=0.45f, y=0.85f;
         var testPoints = new List<Vector3>
         {
             //new Vector3(-1.1f,  0.0f, 0.1f),
             //new Vector3( 1.1f,  0.0f, 0.1f),
             //new Vector3( 0.0f, -2.1f, 0.1f),
             //new Vector3( 0.0f,  2.1f, 0.1f)
-             new Vector3(-0.45f,  0.0f, 0.1f),
-            new Vector3( 0.45f,  0.0f, 0.1f),
-            new Vector3( 0.0f, -0.85f, 0.1f),
-            new Vector3( 0.0f,  0.85f, 0.1f)
+             new Vector3(-x,  0.0f, 0.1f),
+            new Vector3( x,  0.0f, 0.1f),
+            new Vector3( 0.0f, -y, 0.1f),
+            new Vector3( 0.0f,  y, 0.1f)
         };
 
         var testDirs = new List<Vector3>
@@ -130,7 +135,7 @@ public class Portal : MonoBehaviour
             RaycastHit hit;
             Vector3 raycastPos = testTransform.TransformPoint(testPoints[i]);
             Vector3 raycastDir = testTransform.TransformDirection(testDirs[i]);
-
+            
             if (Physics.CheckSphere(raycastPos, 0.05f, placementMask))
             {
                 break;
@@ -175,7 +180,7 @@ public class Portal : MonoBehaviour
     private bool CheckOverlap()
     {
         var checkExtents = new Vector3(0.9f, 1.9f, 0.05f);
-        Debug.Log("чек1");
+       
         var checkPositions = new Vector3[]
         {
             testTransform.position + testTransform.TransformVector(new Vector3( 0.0f,  0.0f, -0.1f)),
@@ -190,38 +195,38 @@ public class Portal : MonoBehaviour
        
         // Ensure the portal does not intersect walls.
         var intersections = Physics.OverlapBox(checkPositions[0], checkExtents, testTransform.rotation, placementMask);
-        Debug.Log(checkPositions[0]);
-        Debug.Log(checkExtents);
-        Debug.Log(testTransform.rotation);
-        Debug.Log(placementMask);
-        Debug.Log(intersections.Length);
+        //Debug.Log(checkPositions[0]);
+        //Debug.Log(checkExtents);
+        //Debug.Log(testTransform.rotation);
+        //Debug.Log(placementMask);
+        //Debug.Log(intersections.Length);
         if (intersections.Length > 4)
         {
-            Debug.Log("чек2");
+          //  Debug.Log("чек2");
             return false;
         }
         else if (intersections.Length == 4)
         {
-            Debug.Log("чек3");
+           // Debug.Log("чек3");
             // We are allowed to intersect the old portal position.
             if (intersections[0] != collider)
             {
-                Debug.Log("чек4");
+               // Debug.Log("чек4");
                 return false;
             }
         }
 
         // Ensure the portal corners overlap a surface.
         bool isOverlapping = true;
-        Debug.Log("чек5");
-       /* for (int i = 1; i < checkPositions.Length - 1; ++i)
-        {
-            Debug.Log(isOverlapping);
-            isOverlapping &= Physics.Linecast(checkPositions[i],
-                checkPositions[i] + checkPositions[checkPositions.Length - 1], placementMask);
-        }*/
-        Debug.Log("чек6");
-        Debug.Log(isOverlapping);
+       
+        //for (int i = 1; i < checkPositions.Length - 1; ++i)
+        //{
+        //    Debug.Log(isOverlapping);
+        //    isOverlapping &= Physics.Linecast(checkPositions[i],
+        //        checkPositions[i] + checkPositions[checkPositions.Length - 1], placementMask);
+        //}
+        //Debug.Log("чек6");
+       // Debug.Log(isOverlapping);
         return isOverlapping;
     }
 

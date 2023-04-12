@@ -24,7 +24,7 @@ public class hide_grab : MonoBehaviour
         if (hit.collider.tag=="Cube" && Input.GetButtonDown("XRI_Right_GrabButton"))
         {
             Grabray.SetActive(true);
-           
+            
         }
     }
 }
