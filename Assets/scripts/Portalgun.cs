@@ -15,7 +15,7 @@ public class Portalgun : MonoBehaviour
     [SerializeField] private AudioSource _shotSoundSource;
     [SerializeField] private Camera _cam;
     [SerializeField] private Portalgun portalgun;
-
+    [SerializeField] private bool orangeactive;
     [SerializeField]
     private LayerMask layerMask;
 
@@ -23,7 +23,7 @@ public class Portalgun : MonoBehaviour
     private PortalPair portals;
     [SerializeField]
     private Crosshair crosshair;
-
+    
     // Start is called before the first frame update
     private float _nextFire1 = 0f,_nextFire2=0f;
   
@@ -38,7 +38,7 @@ public class Portalgun : MonoBehaviour
           
             FirePortal(0, portalgun.transform.position, portalgun.transform.forward, _Range);
         }
-        else if (Input.GetButtonDown("XRI_Right_PrimaryButton") && Time.time > _nextFire2)
+        else if (orangeactive && Input.GetButtonDown("XRI_Right_PrimaryButton") && Time.time > _nextFire2)
         {
             _nextFire2 = Time.time + 1f / _fireRate;
             
@@ -59,7 +59,7 @@ public class Portalgun : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(pos, dir, out hit, distance, layerMask);
        // Debug.Log("0");
-        if (hit.collider != null)
+        if (hit.collider != null && (hit.collider.tag == "white"|| hit.collider.tag == "Floor"|| hit.collider.tag == "Portal"))
         {
             Debug.Log(hit.collider.tag);
             // If we shoot a portal, recursively fire through the portal.
