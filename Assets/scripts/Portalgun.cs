@@ -126,5 +126,9 @@ public class Portalgun : MonoBehaviour
                 _shotSoundSource.PlayOneShot(InvalidSurface);
             }
         }
+        else
+        {
+            _shotSoundSource.PlayOneShot(InvalidSurface);
+        }
     }
 }

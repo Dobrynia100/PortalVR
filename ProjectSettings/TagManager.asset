@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Portal
   - Floor
+  - white
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Portalgun
   - Cube
   - Player
   - LevelGeom

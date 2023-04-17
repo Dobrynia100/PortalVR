@@ -39,8 +39,10 @@ public class PortalableObject : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(inPortal == null || outPortal == null)
+       
+        if (inPortal == null || outPortal == null)
         {
+            
             return;
         }
 
@@ -62,6 +64,7 @@ public class PortalableObject : MonoBehaviour
         }
         else
         {
+            
             cloneObject.transform.position = new Vector3(-1000.0f, 1000.0f, -1000.0f);
         }
     }
@@ -82,7 +85,7 @@ public class PortalableObject : MonoBehaviour
     {
         Physics.IgnoreCollision(collider, wallCollider, false);
         --inPortalCount;
-
+        
         if (inPortalCount == 0)
         {
             cloneObject.SetActive(false);
@@ -111,7 +114,7 @@ public class PortalableObject : MonoBehaviour
             Debug.Log(inTransform.rotation.z);
             Debug.Log(outTransform.rotation.y);
             Debug.Log(outTransform.rotation.z);
-            if (inTransform.rotation.y <=-0.5f ||  inTransform.rotation.z<=-0.5f) //|| outTransform.rotation.z <= -0.5f  || outTransform.rotation.y <= -0.5f)
+            if (inTransform.rotation.y <=-0.5f ||  inTransform.rotation.z<=-0.5f || outTransform.rotation.z <= -0.5f  || outTransform.rotation.y <= -0.5f)
             {
                 Debug.Log("!!!!!!!!!!!верх-низ,вращение!!!!!!!!!");
                transform.rotation = outTransform.rotation;

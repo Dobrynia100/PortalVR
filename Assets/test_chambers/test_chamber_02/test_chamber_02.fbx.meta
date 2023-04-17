@@ -1,0 +1,331 @@
+fileFormatVersion: 2
+guid: d45cfc14a41fd9c4ea091c46232cb37c
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: a26af24b1a5e9284fa7db5049ea5a31e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrate Slate
+    second: {fileID: 2100000, guid: f60c6887e6ce4644faaf403d1a6e38ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete Panels 01
+    second: {fileID: 2100000, guid: 3943c6305ba3134449259e0589f7b935, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete Panels 01.001
+    second: {fileID: 2100000, guid: b51212c419bc262409465902abf92032, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete Panels 01.003
+    second: {fileID: 2100000, guid: 908ce63c00be66e499640a821b28a835, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concrete Tiles
+    second: {fileID: 2100000, guid: b880b73c5ec47f641a5373d09b3dd52c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Diamond Concrete
+    second: {fileID: 2100000, guid: 039877fc727345b499686aa6d25df468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Display Pixels Procedural..001
+    second: {fileID: 2100000, guid: e6317d3ddc562564aa79945de7dacd6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Display Pixels Procedural..003
+    second: {fileID: 2100000, guid: 281f857cb52f4794cb169ae5dce81e2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Display Pixels Procedural..004
+    second: {fileID: 2100000, guid: a56e0b15a5fa17f4389989d4b83f864a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Display Pixels Procedural_
+    second: {fileID: 2100000, guid: cc454df5b0ec5454b8f3463dfda6433d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Tracks
+    second: {fileID: 2100000, guid: f4bc35f751f38e245bda32dd6d6c801d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Doors
+    second: {fileID: 2100000, guid: a6eb7273438173546a7403da235a45c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frame
+    second: {fileID: 2100000, guid: f99df28fbea1c4e409f124d77282fbe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frosty Glass
+    second: {fileID: 2100000, guid: 3db3b56ad6d3102438fb596d3aae3285, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: a1fed4461edc5db4185d3483282e1ec1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_ElevatorRoom_Walls.001
+    second: {fileID: 2100000, guid: ac34cedbde95dbb4180eca82f3db0550, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_Elevator_Base_A.002
+    second: {fileID: 2100000, guid: 062a9d4eeb26c814aacf5488cbfded27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_Elevator_Exterior_01.002
+    second: {fileID: 2100000, guid: 0ec7da7f936971649b867c72794ddbf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_Elevator_Frame_01.001
+    second: {fileID: 2100000, guid: dd8b17bb39eb5a149bdbefeba0c1d40e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_Elevator_Frame_02.001
+    second: {fileID: 2100000, guid: 6ec89e20e0504a8429cc232e7826da80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_Elevator_Interior_01.001
+    second: {fileID: 2100000, guid: fb875d665a479684daa9d2e4bec95adc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Fixture_Elevator_Interior_02.001
+    second: {fileID: 2100000, guid: 984d30bc29552224b856e11988382e70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: c955de50078ccb0448fa62a1c14442a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RAL Classic Red hues
+    second: {fileID: 2100000, guid: 55edd3e9be1b2f5459515de9a7320190, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: autoportal_frame
+    second: {fileID: 2100000, guid: a292b04ccc861144e85e1eca18c747e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_base_black
+    second: {fileID: 2100000, guid: d37d7cd57888a0a468bb9c77099d34f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concra
+    second: {fileID: 2100000, guid: 06131d2d764986c4a8e5a3de11d78ec7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_modular_ceiling001a
+    second: {fileID: 2100000, guid: 50402e86f6408b848ac2a1a6f98c1ebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_modular_floor001a
+    second: {fileID: 2100000, guid: 02de9cf9891da3344bc78646a0b27d44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_modular_wall001d
+    second: {fileID: 2100000, guid: 059c2f658438b0c43a212fa8fd3e0fb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cutscene_material.001
+    second: {fileID: 2100000, guid: cc25f0fc91dfb6d45af1f214454bb144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: elevatorshaft_wall
+    second: {fileID: 2100000, guid: b110bb4ea17378a4589f6ebec3aaed93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fizzler
+    second: {fileID: 2100000, guid: 0ebf5435ad7ef8a458ad5883760c5ce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glasswindow_frosted_002
+    second: {fileID: 2100000, guid: 2c22a762557c5e341b0c4635679647b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hazard_orange_03b
+    second: {fileID: 2100000, guid: 239e892ff31ac15409dd1e0ef1f3cfec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light_orange001
+    second: {fileID: 2100000, guid: 1e36ec93b382bfd40b7708a2decfff82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_lift001
+    second: {fileID: 2100000, guid: 34b43ebb04485964a8e9912c5b1fdfa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalgrate018
+    second: {fileID: 2100000, guid: c71c15a608d71794f99aa50f6cf68ba1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalwall_bts_006a
+    second: {fileID: 2100000, guid: 3083d69cc4a060a4ea84ff16020634e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plaster white
+    second: {fileID: 2100000, guid: 74e2eee4f4adcd34baff576d474c9614, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_plasticwall001a
+    second: {fileID: 2100000, guid: de22c72eef93995429374fba90c58791, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_plasticwall003a
+    second: {fileID: 2100000, guid: ba3dac9c60ea32e4aba0d46554dc38d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: refract01_dx8
+    second: {fileID: 2100000, guid: 6e5ffe3bc0ea66f48ae0b317823a820d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vertex_color
+    second: {fileID: 2100000, guid: f2131e66731bcfe469ff2a39c7c351f1, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -73,9 +73,10 @@ public class Portal : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         var obj = other.GetComponent<PortalableObject>();
-
+        
         if (portalObjects.Contains(obj))
         {
+            
             portalObjects.Remove(obj);
             obj.ExitPortal(wallCollider);
         }
@@ -109,6 +110,7 @@ public class Portal : MonoBehaviour
     // Ensure the portal cannot extend past the edge of a surface.
     private void FixOverhangs()
     {
+        Debug.Log("overhangs");
         float x=0.45f, y=0.85f;
         var testPoints = new List<Vector3>
         {
@@ -142,6 +144,7 @@ public class Portal : MonoBehaviour
             }
             else if (Physics.Raycast(raycastPos, raycastDir, out hit, 0.85f, placementMask))//2.1f, placementMask))
             {
+                Debug.Log("3");
                 var offset = hit.point - raycastPos;
                 testTransform.Translate(offset, Space.World);
             }
@@ -151,6 +154,7 @@ public class Portal : MonoBehaviour
     // Ensure the portal cannot intersect a section of wall.
     private void FixIntersects()
     {
+        Debug.Log("intersects");
         var testDirs = new List<Vector3>
         {
              Vector3.right,
@@ -169,6 +173,7 @@ public class Portal : MonoBehaviour
 
             if (Physics.Raycast(raycastPos, raycastDir, out hit, testDists[i], placementMask))
             {
+                Debug.Log("5");
                 var offset = (hit.point - raycastPos);
                 var newOffset = -raycastDir * (testDists[i] - offset.magnitude);
                 testTransform.Translate(newOffset, Space.World);
@@ -180,7 +185,7 @@ public class Portal : MonoBehaviour
     private bool CheckOverlap()
     {
         var checkExtents = new Vector3(0.9f, 1.9f, 0.05f);
-       
+        Debug.Log("overlap");
         var checkPositions = new Vector3[]
         {
             testTransform.position + testTransform.TransformVector(new Vector3( 0.0f,  0.0f, -0.1f)),
@@ -202,12 +207,12 @@ public class Portal : MonoBehaviour
         //Debug.Log(intersections.Length);
         if (intersections.Length > 4)
         {
-          //  Debug.Log("чек2");
+            Debug.Log("чек2");
             return false;
         }
         else if (intersections.Length == 4)
         {
-           // Debug.Log("чек3");
+            Debug.Log("чек3");
             // We are allowed to intersect the old portal position.
             if (intersections[0] != collider)
             {

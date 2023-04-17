@@ -37,4 +37,9 @@ public class Crosshair : MonoBehaviour
            
         }
     }
+    public void portaldeactivated()
+    {
+        inPortalImg.gameObject.SetActive(false);
+        outPortalImg.gameObject.SetActive(false);
+    }
 }

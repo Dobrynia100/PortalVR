@@ -25,22 +25,25 @@ public class Jumping : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("XRI_Right_SecondaryButton")&& !isJumping)
+        if (Input.GetButtonDown("XRI_Right_SecondaryButton") && !isJumping)
         {
             Jump();
         }
 
         if (rb.velocity.y < 0)
         {
+           
             rb.velocity += Vector3.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
         else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
         {
+
             rb.velocity += Vector3.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
         if (!isJumping)
         {
+            
             float moveInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         }
@@ -49,13 +52,16 @@ public class Jumping : MonoBehaviour
 
     private void Jump()
     {
+        Debug.Log("прыжок");
         isJumping = true;
         rb.velocity=Vector3.up * jumpForce;
     }
     private void OnCollisionEnter(Collision collision)
     {
+       // Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Floor"))
         {
+            Debug.Log("на полу");
             isJumping = false;
         }
     }

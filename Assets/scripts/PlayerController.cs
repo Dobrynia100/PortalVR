@@ -22,14 +22,15 @@ public class PlayerController : PortalableObject
     }
     private void Update()
     {
+       // Debug.Log("место");
         var center = origin.CameraInOriginSpacePos;
         Collider.center = new Vector3(center.x, Collider.center.y, center.z);
-        Collider.height = origin.CameraInOriginSpaceHeight + 1.0f;
+        Collider.height = origin.CameraInOriginSpaceHeight + 0.1f;
         //if (!origin.transform.rotation.x.Equals(0))
         //{
         //    Debug.Log("ротация х 0");
         //    origin.transform.rotation.Set(0.0f, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-       
+
         //}
     }
     public override void Warp()

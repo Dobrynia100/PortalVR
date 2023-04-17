@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
-
-public class frame_portal_trigger : frame_portal
+using UnityEngine.XR.Interaction.Toolkit;
+public class frame_portal_trigger : XRBaseInteractor
 {
     // Start is called before the first frame update
-    Collision collision;
+
+    [SerializeField]
+    private PortalPair portals;
+    [SerializeField]
+    Collider frame;
+    [SerializeField]
+    private Crosshair crosshair;
     //[SerializeField] GameObject trigger;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))//  capsuleCollider.CompareTag("Player") )
+       
+        if (other.gameObject.CompareTag("Player"))//  capsuleCollider.CompareTag("Player") )
         {
-           SpawnPortal();
+            Debug.Log("триггер рамка ");
+            portals.Portals[1].PlacePortal(frame, frame.transform.position, Quaternion.Euler(0.00f, 90.0f, 0.00f));
+            crosshair.SetPortalPlaced(1,true);
         }
     }
 }
