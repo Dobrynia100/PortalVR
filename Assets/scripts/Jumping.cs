@@ -58,7 +58,7 @@ public class Jumping : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-       // Debug.Log(collision.gameObject.tag);
+      
         if (collision.gameObject.CompareTag("Floor"))
         {
             Debug.Log("на полу");

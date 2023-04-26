@@ -82,12 +82,12 @@ public class PortalCamera : MonoBehaviour
 
         for(int i = 0; i <= iterationID; ++i)
         {
-            // Position the camera behind the other portal.
+            // Расположение камеры за другим порталом
             Vector3 relativePos = inTransform.InverseTransformPoint(cameraTransform.position);
             relativePos = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativePos;
             cameraTransform.position = outTransform.TransformPoint(relativePos);
 
-            // Rotate the camera to look through the other portal.
+            // Поворот камеры чтобы смотреть через другой портал
             Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * cameraTransform.rotation;
             relativeRot = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativeRot;
             cameraTransform.rotation = outTransform.rotation * relativeRot;
@@ -102,7 +102,7 @@ public class PortalCamera : MonoBehaviour
         var newMatrix = mainCamera.CalculateObliqueMatrix(clipPlaneCameraSpace);
         portalCamera.projectionMatrix = newMatrix;
 
-        // Render the camera to its render target.
+        
         UniversalRenderPipeline.RenderSingleCamera(SRC, portalCamera);
     }
 }

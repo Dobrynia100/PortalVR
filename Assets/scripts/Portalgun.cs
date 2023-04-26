@@ -58,41 +58,11 @@ public class Portalgun : MonoBehaviour
     {
         RaycastHit hit;
         Physics.Raycast(pos, dir, out hit, distance, layerMask);
-       // Debug.Log("0");
-        if (hit.collider != null && (hit.collider.tag == "white"|| hit.collider.tag == "Floor"|| hit.collider.tag == "Portal"))
+       
+        if (hit.collider != null && (hit.collider.tag == "white"|| hit.collider.tag == "Floor"))//проверка подходящей поверхности
         {
             Debug.Log(hit.collider.tag);
-            // If we shoot a portal, recursively fire through the portal.
-            if (hit.collider.tag == "Portal")
-            {
-              
-                var inPortal = hit.collider.GetComponent<Portal>();
-
-                if(inPortal == null)
-                {
-                    return;
-                }
-
-                var outPortal = inPortal.OtherPortal;
-
-                // Update position of raycast origin with small offset.
-                Vector3 relativePos = inPortal.transform.InverseTransformPoint(hit.point + dir);
-                relativePos = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativePos;
-                pos = outPortal.transform.TransformPoint(relativePos);
-
-                // Update direction of raycast.
-                Vector3 relativeDir = inPortal.transform.InverseTransformDirection(dir);
-                relativeDir = Quaternion.Euler(0.0f, 180.0f, 0.0f) * relativeDir;
-                dir = outPortal.transform.TransformDirection(relativeDir);
-
-                distance -= Vector3.Distance(pos, hit.point);
-
-                FirePortal(portalID, pos, dir, distance);
-
-                return;
-            }
-
-            // Orient the portal according to camera look direction and surface direction.
+            // Ориентирует портал согласно направлению камеры и поверхности
             var cameraRotation = _cam.transform.rotation;
             var portalRight = cameraRotation * Vector3.right;
             
@@ -110,7 +80,7 @@ public class Portalgun : MonoBehaviour
 
             var portalRotation = Quaternion.LookRotation(portalForward, portalUp);
             bool wasPlaced = portals.Portals[portalID].PlacePortal(hit.collider, hit.point, portalRotation);
-            if (wasPlaced)
+            if (wasPlaced)//При успешной установке отображается индикатор и воспроизводится звук
             {
                 Debug.Log("Placed");
                 if (portalID == 0)

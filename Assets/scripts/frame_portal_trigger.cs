@@ -13,13 +13,11 @@ public class frame_portal_trigger : XRBaseInteractor
     Collider frame;
     [SerializeField]
     private Crosshair crosshair;
-    //[SerializeField] GameObject trigger;
-
-
+    
     private void OnTriggerEnter(Collider other)
     {
        
-        if (other.gameObject.CompareTag("Player"))//  capsuleCollider.CompareTag("Player") )
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("триггер рамка ");
             portals.Portals[1].PlacePortal(frame, frame.transform.position, Quaternion.Euler(0.00f, 90.0f, 0.00f));

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -96,54 +97,50 @@ public class PortalableObject : MonoBehaviour
     {
         var inTransform = inPortal.transform;
         var outTransform = outPortal.transform;
+        
 
-        // Update position of object.
-        Vector3 relativePos = inTransform.InverseTransformPoint(transform.position);
-        relativePos = halfTurn * relativePos;
-        transform.position = outTransform.TransformPoint(relativePos);
-
-        // Update rotation of object.
-       
-            
 
         if (collider.tag.Equals("Player"))
         {
             Debug.Log("тэг игрока");
+            Vector3 relativePos = inTransform.InverseTransformPoint(transform.position);
+            relativePos = halfTurn * relativePos;//+collider.transform.position;
+            transform.position = outTransform.TransformPoint(relativePos);//+collider.bounds.center;
             
-            Debug.Log(inTransform.rotation.y);
-            Debug.Log(inTransform.rotation.z);
-            Debug.Log(outTransform.rotation.y);
-            Debug.Log(outTransform.rotation.z);
-            if (inTransform.rotation.y <=-0.5f ||  inTransform.rotation.z<=-0.5f || outTransform.rotation.z <= -0.5f  || outTransform.rotation.y <= -0.5f)
-            {
-                Debug.Log("!!!!!!!!!!!верх-низ,вращение!!!!!!!!!");
-               transform.rotation = outTransform.rotation;
-                transform.rotation = Quaternion.Euler(0.01f, 180.0f, 0.01f);
-            }
-            else
-            {
-                Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
-                
-                Debug.Log(relativeRot.y);
-                Debug.Log(relativeRot.z);
+            //Debug.Log(inTransform.rotation.y);
+            //Debug.Log(inTransform.rotation.z);
+            //Debug.Log(outTransform.rotation.y);
+            //Debug.Log(outTransform.rotation.z);
+            
+            
+            Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
+
+                //Debug.Log(relativeRot.y);
+                //Debug.Log(relativeRot.z);
                 relativeRot = halfTurn * relativeRot;
                 // Camera.main.transform.rotation.Set(0.0f, transform.rotation.y + 1.0f, transform.rotation.z, transform.rotation.w);
                 // transform.rotation.Set(0.0f, transform.rotation.y + 1.0f, transform.rotation.z, transform.rotation.w);
-                
-                Debug.Log(relativeRot.y);
-                Debug.Log(outTransform.rotation.y);
-                Debug.Log(relativeRot.z);
-                Debug.Log(outTransform.rotation.z);
-                transform.rotation = outTransform.rotation * relativeRot;      
-                Debug.Log(transform.rotation.y);              
-                Debug.Log(transform.rotation.z);
-            }
+
+                //Debug.Log(relativeRot.y);
+                //Debug.Log(outTransform.rotation.y);
+                //Debug.Log(relativeRot.z);
+                //Debug.Log(outTransform.rotation.z);
+                transform.rotation = outTransform.rotation * relativeRot;
+                //Debug.Log(transform.rotation.y);
+                //Debug.Log(transform.rotation.z);
+           
             
         }
         else {
+            // Update position of object.
+            Vector3 relativePos = inTransform.InverseTransformPoint(transform.position);
+            relativePos = halfTurn * relativePos;
+            transform.position = outTransform.TransformPoint(relativePos);
+            // Update rotation of object.
             Quaternion relativeRot = Quaternion.Inverse(inTransform.rotation) * transform.rotation;
             relativeRot = halfTurn * relativeRot;
-            transform.rotation = outTransform.rotation * relativeRot;//сделать только с одной осью,или как то оставлять ротацию определенных
+            transform.rotation = outTransform.rotation * relativeRot;
+
         }
         // Update velocity of rigidbody.
         Vector3 relativeVel = inTransform.InverseTransformDirection(GetComponent<Rigidbody>().velocity);
