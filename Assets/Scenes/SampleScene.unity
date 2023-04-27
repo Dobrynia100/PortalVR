@@ -889,7 +889,7 @@ MonoBehaviour:
   portals: {fileID: 1644187358}
   frame: {fileID: 1251135354}
   crosshair: {fileID: 2085435808}
-  x: 0
+  x: -90
   y: 0
   z: 0
 --- !u!64 &271261497
@@ -3646,7 +3646,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8e146c253f8a8674da32d8dbd1a0e71e, type: 2}
+      objectReference: {fileID: 2100000, guid: 3943c6305ba3134449259e0589f7b935, type: 2}
     - target: {fileID: -3136983445937818655, guid: d45cfc14a41fd9c4ea091c46232cb37c,
         type: 3}
       propertyPath: m_Layer
@@ -4152,6 +4152,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: white
       objectReference: {fileID: 0}
+    - target: {fileID: -807891612677705706, guid: d45cfc14a41fd9c4ea091c46232cb37c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c8a05873c11608c478089e67ee3c9b75, type: 2}
     - target: {fileID: -782144873855358346, guid: d45cfc14a41fd9c4ea091c46232cb37c,
         type: 3}
       propertyPath: m_Layer
@@ -4352,6 +4357,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 955875317721572383, guid: d45cfc14a41fd9c4ea091c46232cb37c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c8a05873c11608c478089e67ee3c9b75, type: 2}
     - target: {fileID: 1043956322312160742, guid: d45cfc14a41fd9c4ea091c46232cb37c,
         type: 3}
       propertyPath: m_Layer
@@ -5125,7 +5135,7 @@ PrefabInstance:
     - target: {fileID: 6720692741632425537, guid: d45cfc14a41fd9c4ea091c46232cb37c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.003
+      value: -13.009
       objectReference: {fileID: 0}
     - target: {fileID: 6739795669413602313, guid: d45cfc14a41fd9c4ea091c46232cb37c,
         type: 3}
@@ -11631,7 +11641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725982592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.778, y: 0.767, z: -9.371}
+  m_LocalPosition: {x: -1.778, y: 0.78, z: -8.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11833,7 +11843,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25
-  m_Height: 1.4
+  m_Height: 1.3
   m_Direction: 1
   m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!54 &1725982604

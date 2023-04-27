@@ -20,7 +20,7 @@ public class frame_portal_trigger : XRBaseInteractor
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("триггер рамка ");
-            portals.Portals[1].PlacePortal(frame, frame.transform.position, frame.transform.rotation*Quaternion.Euler(x,y,z));// Quaternion.Euler( 0, 90, 0.00f));
+            portals.Portals[1].PlacePortal(frame, frame.transform.position, frame.transform.rotation*Quaternion.Euler(x,y,z));
             crosshair.SetPortalPlaced(1,true);
         }
     }
