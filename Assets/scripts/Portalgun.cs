@@ -45,11 +45,7 @@ public class Portalgun : MonoBehaviour
           
             FirePortal(1, portalgun.transform.position, portalgun.transform.forward, _Range);
         }
-        if (Input.GetButtonDown("XRI_Right_GripButton"))
-        {           
-               // _shotSoundSource.PlayOneShot(Grabbing);
-            
-        }
+        
         
        
     }

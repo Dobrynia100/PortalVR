@@ -10,6 +10,8 @@ public class TrigCubeDisp : MonoBehaviour
 
     public GameObject cubePrefab;
     public Transform spawnPoint;
+    [SerializeField]
+    private AudioSource audioC;
     private bool cubeSpawned = false;
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +19,7 @@ public class TrigCubeDisp : MonoBehaviour
         {
             cubeSpawned = true;
             GameObject newCube = Instantiate(cubePrefab, spawnPoint.position, spawnPoint.rotation);
+            audioC.Play();
         }
     }
 
