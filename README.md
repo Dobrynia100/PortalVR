@@ -1,7 +1,10 @@
 # PortalVR
 Перенос игры Portal на движок Unity для виртуальной реальности с помощью XR Interaction Toolkit
 
+Версия движка:2021.3.23f1
+
 Плагины:
+
 XR Interaction Toolkit 2.3.1
 
 XR Plugin Management 4.3.3
