@@ -9,7 +9,7 @@ public class Fizzler : XRBaseInteractor
     [SerializeField]
     private Crosshair crosshair;
     [SerializeField] private AudioSource sound;
-    
+    TrigCubeDisp cube;
     private void OnTriggerEnter(Collider other)
     {
        
@@ -21,6 +21,11 @@ public class Fizzler : XRBaseInteractor
             Pair.Portals[1].RemovePortal();
             sound.Play();
             
+        }
+        if (other.gameObject.CompareTag("Cube"))
+        {
+             cube.cubeSpawned = false;
+            Destroy(other.gameObject);
         }
     }
 }

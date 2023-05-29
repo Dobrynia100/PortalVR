@@ -18,11 +18,11 @@ public class PlayerController : PortalableObject
     {
         base.Awake();
 
-       // cameraMove = GetComponent<CameraMove>();
+       
     }
     private void Update()
     {
-       // Debug.Log("место");
+       // Отслеживание высоты
         var center = origin.CameraInOriginSpacePos;
         Collider.center = new Vector3(center.x, Collider.center.y, center.z);
         Collider.height = origin.CameraInOriginSpaceHeight + 0.1f;
